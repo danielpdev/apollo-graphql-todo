@@ -30,6 +30,13 @@ const mutation = new GraphQLObjectType({
         return Todo.remove({ _id: id });
       }
     },
+    updateTodo: {
+      type: TodoType,
+      args: { id: { type: GraphQLID }, content: { type: GraphQLString }  },
+      resolve(parentValue, { id, content }) {
+        return Todo.update({ _id: id }, { content });
+      }
+    },
   }
 });
 
