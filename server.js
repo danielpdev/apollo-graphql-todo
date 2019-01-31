@@ -1,22 +1,30 @@
-// server.js
-// where your node app starts
-
-// init project
 const express = require('express');
+const models = require('./models');
+const expressGraphQL = require('express-graphql');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const schema = require('./schema/schema');
+const path = require('path');
+// const cors = require('cors')
 const app = express();
+// app.use(cors())
+// Replace with your mongoLab URI
+// mongodb://<dbuser>:<dbpassword>@ds247101.mlab.com:47101/todos-apollo-graphql
+const MONGO_URI = 'mongodb://user:password@localhost/todos';
+if (!MONGO_URI) {
+  throw new Error('You must provide a MongoLab URI');
+}
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
+mongoose.Promise = global.Promise;
+mongoose.connect(MONGO_URI);
+mongoose.connection
+    .once('open', () => console.log('Connected to MongoLab instance.'))
+    .on('error', error => console.log('Error connecting to MongoLab:', error));
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: true
+}));
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
-
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+module.exports = app;
