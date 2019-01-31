@@ -3,7 +3,7 @@ const models = require('./models');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const schema = require('./schema/schema');
+const schema = require('./schema');
 const path = require('path');
 // const cors = require('cors')
 const app = express();
@@ -26,5 +26,9 @@ app.use('/graphql', expressGraphQL({
   schema,
   graphiql: true
 }));
+
+app.listen(4000, () => {
+  console.log('Listening');
+});
 
 module.exports = app;
