@@ -14,7 +14,7 @@
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.1.1",
-    "mongoose": "^5.4.8"
+    "mongoose": "^5.4.9"
   },
   "engines": {
     "node": "8.x"

@@ -3,7 +3,7 @@ dependencies:
   express: 4.16.4
   express-graphql: 0.7.1
   graphql: 14.1.1
-  mongoose: 5.4.8
+  mongoose: 5.4.9
 packages:
   /accepts/1.3.5:
     dependencies:
@@ -332,7 +332,7 @@ packages:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
-  /mongoose/5.4.8:
+  /mongoose/5.4.9:
     dependencies:
       async: 2.6.1
       bson: 1.1.0
@@ -350,7 +350,7 @@ packages:
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha512-2wgBi1LBxL/pcG0nNP8zXBLRmWZFzg8pb2MH4JkMPIxP/HGtQQEP0DbG1Yzy+Igsp3M1+V/59uXW37O2Fg5mBQ==
+      integrity: sha512-4dSQpDUe/9b7A7dRrsyJfWmoGEpeMaZ/WZ/KIJFqTHbJm3NUWaWF++hhirAgjtoHNq2ZILIII0LHEhgzP2NuRw==
   /mpath/0.5.1:
     dev: false
     engines:
@@ -573,4 +573,4 @@ specifiers:
   express: ^4.16.4
   express-graphql: ^0.7.1
   graphql: ^14.1.1
-  mongoose: ^5.4.8
+  mongoose: ^5.4.9
