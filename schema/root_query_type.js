@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
+const { 
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLID,
+  GraphQLNonNull
+} = graphql;
 const Todo = mongoose.model('todo');
 const TodoType = require('./todo_type');
 
