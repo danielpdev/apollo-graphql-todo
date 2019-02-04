@@ -6,7 +6,6 @@ const {
   GraphQLInt,
   GraphQLString
 } = graphql;
-const Todo = mongoose.model('todo');
 
 const TodoType = new GraphQLObjectType({
   name:  'TodoType',
