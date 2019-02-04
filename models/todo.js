@@ -1,8 +1,12 @@
 const mongoose = require('mongoose'); //require mongoose for defining our todo schema
 const Schema = mongoose.Schema;
 
+
+/* 
+  default 0 becuase when we first define a todo we have need to have 0 likes
+*/
 const TodoSchema = new Schema({
-  likes: { type: Number, default: 0 }, //default 0 becuase when we first define a todo we have need to have 0 likes
+  likes: { type: Number, default: 0 }, 
   content: { type: String }
 });
 
