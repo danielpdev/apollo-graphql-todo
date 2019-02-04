@@ -6,14 +6,18 @@ const TodoSchema = new Schema({
   content: { type: String }
 });
 
-TodoSchema.statics.like = function(id) { // add a function for setting like in order to call TodoSchema.like(id) 
+/* 
+  add a function for likes in order to call TodoSchema.like(id) 
+  return the promise so we can pass it back to our graphql resolve function
+*/
+TodoSchema.statics.like = (id) => { 
   const Todo = mongoose.model('todo');
 
   return Todo.findById(id)
     .then(todo => {
       ++todo.likes;
       return todo.save();
-    })
+  });
 }
 
 mongoose.model('todo', TodoSchema);
