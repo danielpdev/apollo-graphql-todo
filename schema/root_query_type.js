@@ -9,7 +9,7 @@ const {
 const Todo = mongoose.model('todo');
 const TodoType = require('./todo_type');
 
-const RootQuery = new GraphQLObjectType({
+const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: () => ({
     todos: {
@@ -28,4 +28,4 @@ const RootQuery = new GraphQLObjectType({
   })
 });
 
-module.exports = RootQuery;
+module.exports = RootQueryType;
