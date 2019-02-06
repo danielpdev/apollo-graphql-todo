@@ -21,7 +21,7 @@ const RootQueryType = new GraphQLObjectType({
     todo: {
       type: TodoType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-      resolve(parnetValue, { id }) {
+      resolve(parentValue, { id }) {
         return Todo.findById(id);
       }
     }

@@ -12,7 +12,10 @@ const mutation = new GraphQLObjectType({
       args: {
         content: { type: GraphQLString }
       },
-      resolve(parentValue, { content }) {
+      /*
+        parentValue is used if
+      */
+      resolve(parentValue, { content }) { 
         return (new Todo({ content })).save()
       }
     },
