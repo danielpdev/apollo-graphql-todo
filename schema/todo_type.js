@@ -10,9 +10,15 @@ const {
 const TodoType = new GraphQLObjectType({
   name:  'TodoType',
   fields: () => ({
-    id: { type: GraphQLID },
-    likes: { type: GraphQLInt },
-    content: { type: GraphQLString },
+    id: {
+      type: GraphQLID
+    },
+    likes: {
+      type: GraphQLInt
+    },
+    content: {
+      type: GraphQLString
+    }
   })
 });
 

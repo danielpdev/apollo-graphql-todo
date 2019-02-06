@@ -10,32 +10,46 @@ const mutation = new GraphQLObjectType({
     addTodo: {
       type: TodoType,
       args: {
-        content: { type: GraphQLString }
+        content: { 
+          type: GraphQLString
+        }
       },
-      /*
-        parentValue is used if
-      */
       resolve(parentValue, { content }) { 
         return (new Todo({ content })).save()
       }
     },
     likeTodo: {
       type: TodoType,
-      args: { id: { type: GraphQLID } },
+      args: { 
+        id: { 
+          type: GraphQLID
+        }
+      },
       resolve(parentValue, { id }) {
         return Todo.like(id);
       }
     },
     deleteTodo: {
       type: TodoType,
-      args: { id: { type: GraphQLID } },
+      args: {
+        id: {
+          type: GraphQLID
+        }
+      },
       resolve(parentValue, { id }) {
         return Todo.remove({ _id: id });
       }
     },
     updateTodo: {
       type: TodoType,
-      args: { id: { type: GraphQLID }, content: { type: GraphQLString }  },
+      args: {
+        id: {
+          type: GraphQLID
+        },
+        content: {
+          type: GraphQLString
+        }
+      },
       resolve(parentValue, { id, content }) {
         return Todo.update({ _id: id }, { content });
       }

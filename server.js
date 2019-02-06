@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const todoModel = require('./models/todo');
 const bodyParser = require('body-parser');
 const schema = require('./schema');
-const path = require('path');
 const cors = require('cors')
 const app = express();
 app.use(cors())

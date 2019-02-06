@@ -10,7 +10,7 @@ const Todo = mongoose.model('todo');
 const TodoType = require('./todo_type');
 
 const RootQueryType = new GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'RootQuery',
   fields: () => ({
     todos: {
       type: new GraphQLList(TodoType),
@@ -20,8 +20,12 @@ const RootQueryType = new GraphQLObjectType({
     },
     todo: {
       type: TodoType,
-      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-      resolve(parentValue, { id }) {
+      args: {
+        id: {
+          type: new GraphQLNonNull(GraphQLID)
+        }
+      },
+      resolve(parentValue, { id }) { 
         return Todo.findById(id);
       }
     }
