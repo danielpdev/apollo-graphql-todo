@@ -22,4 +22,9 @@ const TodoType = new GraphQLObjectType({
   })
 });
 
+const TodoTypxe = new GraphQLObjectType({
+  name:  'TodoTypxe',
+ 
+});
+
 module.exports = TodoType;
